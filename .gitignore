@@ -6,6 +6,7 @@ ehthumbs.db
 Desktop.ini
 
 /app/compiled/
+/app/config/config.php
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
