@@ -45,4 +45,5 @@ class ControllerBase extends \Phalcon\Mvc\Controller
         }
         return $team;
     }
+
 }

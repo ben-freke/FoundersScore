@@ -32,3 +32,27 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+{%  if msg is defined %}
+    {% if msg == 1 %}
+        <div class="row" id="success" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-success text-center" role="alert"><b>Hazzah! That's worked.</b></div>
+            </div>
+        </div>
+    {% endif %}
+    {% if msg == 2 %}
+        <div class="row" id="error" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-danger text-center" role="alert"><b>Oh dear! That's not worked. Are you missing something?</b></div>
+            </div>
+        </div>
+    {% endif %}
+    {% if msg == 3 %}
+        <div class="row" id="missing" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-warning text-center" role="alert"><b>Dudeee! You're missing some info.</b></div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+

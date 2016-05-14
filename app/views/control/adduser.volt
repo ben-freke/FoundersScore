@@ -2,7 +2,7 @@
 {% include 'adminNavbar.volt' %}
 
 <div class="row">
-    <div class="col-md-2 col-md-offset-5" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;" >
+    <div class="col-md-4 col-md-offset-4" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;" >
         <h3 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Add User</b></h3>
         <br>
         <form method="post" action="/control/adduser">

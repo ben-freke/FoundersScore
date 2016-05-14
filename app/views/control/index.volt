@@ -22,7 +22,7 @@
         <div class="col-md-4 col-md-offset-4">
             <h1 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Founders Control Page</b></h1>
             <br>
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-12">
                 <div class="text-center">
                     <form method="post" action="/control">
                     <input type="text" name="email" class="form-control" placeholder="Email Address">

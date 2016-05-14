@@ -23,7 +23,8 @@ class ControlController extends ControllerBase
             $response->redirect("/control", true);
             $response->send();
         }
-
+        $request = new \Phalcon\Http\Request();
+        $this->view->setVar("msg", $request->getQuery('msg'));
     }
 
     public function indexAction()
@@ -60,6 +61,11 @@ class ControlController extends ControllerBase
     public function dashboardAction()
     {
         \Phalcon\Tag::setTitle('Dashboard');
+        $posts = Posts::find();
+        $users = Users::find();
+        $this->view->setVar("postsNo", count($posts));
+        $this->view->setVar("usersNo", count($users));
+
     }
 
     /**
@@ -75,7 +81,16 @@ class ControlController extends ControllerBase
             $event->location = $request->get("location");
             $event->time = date("Y-m-d H:i:s", strtotime($request->get("datetime")));
             $event->points = $request->get("points");
-            $event->save();
+            if ($event->save())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/addevent?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/addevent?msg=2", true);
+                $response->send();
+            }
         }
     }
 
@@ -103,12 +118,28 @@ class ControlController extends ControllerBase
             if ($score2 == "") $score2 = null;
             $event->score1 = $score1;
             $event->score2 = $score2;
-            $event->save();
-            $response = new \Phalcon\Http\Response();
-            $response->redirect("/control/viewevents", true);
-            $response->send();
+            if ($event->save())
+            {
+                if ($score1 != "" && $score2 != "") $this->pushEndScore($event);
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/viewevents?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/editevent/".$event->id."?msg=2", true);
+                $response->send();
+            }
         }
 
+    }
+
+    private function pushEndScore(Events $event)
+    {
+        $post = new Posts();
+        $post->userID = $this->session->get("userid");
+        $post->title = $event->name;
+        $post->body = $event->name . " concludes with the score at " . $event->score1 . " to " . $this->getTeamName(1) . " and " . $event->score2 ." to " . $this->getTeamName(2);
+        $post->save();
     }
 
     public function deleteeventAction($id)
@@ -118,10 +149,19 @@ class ControlController extends ControllerBase
             "bind" => array("idVal" => $id)
         ));
 
-        if ($event) $event->delete();
-        $response = new \Phalcon\Http\Response();
-        $response->redirect("/control/viewevents", true);
-        $response->send();
+        if ($event)
+        {
+            if ($event->delete())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/viewevents?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/viewevents?msg=2", true);
+                $response->send();
+            }
+        }
     }
 
     public function vieweventsAction()
@@ -144,10 +184,19 @@ class ControlController extends ControllerBase
             "bind" => array("idVal" => $id)
         ));
 
-        if ($post) $post->delete();
-        $response = new \Phalcon\Http\Response();
-        $response->redirect("/control/blog", true);
-        $response->send();
+        if ($post)
+        {
+            if ($post->delete())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/blog?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/blog?msg=2", true);
+                $response->send();
+            }
+        }
     }
 
     public function editpostAction($id){
@@ -166,10 +215,18 @@ class ControlController extends ControllerBase
             $post->title = $request->get("title");
             $post->body = $request->get("body");
             $post->userID = $this->session->get("userid");
-            $post->save();
-            $response = new \Phalcon\Http\Response();
-            $response->redirect("/control/blog", true);
-            $response->send();
+            if($post->save())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/blog?msg=1", true);
+                $response->send();
+            } else
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/blog?msg=2", true);
+                $response->send();
+            }
+
         }
 
     }
@@ -184,10 +241,17 @@ class ControlController extends ControllerBase
             $post->title = $request->get("title");
             $post->body = $request->get("body");
             $post->userID = $this->session->get("userid");
-            $post->save();
-            $response = new \Phalcon\Http\Response();
-            $response->redirect("/control/addpost", true);
-            $response->send();
+            if($post->save())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/addpost?msg=1", true);
+                $response->send();
+            } else
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/addpost?msg=2", true);
+                $response->send();
+            }
         }
     }
 
@@ -211,7 +275,7 @@ class ControlController extends ControllerBase
             $response->redirect("/control", true);
             $response->send();
         }
-        $users = users::find();
+        $users = users::find(array("order" => "level ASC"));
         $this->view->setVar('users', $users);
     }
 
@@ -240,10 +304,17 @@ class ControlController extends ControllerBase
             $user->password = base64_encode(hash('sha512', $request->get("newPassword")));
             if ($request->get("level") == "Administrator") $user->level = 1;
             else $user->level = 2;
-            $user->save();
-            $response = new \Phalcon\Http\Response();
-            $response->redirect("/control/users", true);
-            $response->send();
+            if($user->save())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/users?msg=1", true);
+                $response->send();
+            } else
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/users?msg=2", true);
+                $response->send();
+            }
         }
     }
 
@@ -260,10 +331,20 @@ class ControlController extends ControllerBase
             "bind" => array("idVal" => $id)
         ));
 
-        if ($user) $user->delete();
-        $response = new \Phalcon\Http\Response();
-        $response->redirect("/control/users", true);
-        $response->send();
+        if ($user)
+        {
+            if ($user->delete())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/users?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/users?msg=2", true);
+                $response->send();
+            }
+        }
+
     }
 
     public function editUserAction($id)
@@ -290,10 +371,16 @@ class ControlController extends ControllerBase
             if ($newPassword != "") $user->password = base64_encode(hash('sha512', $request->get("newPassword")));
             if ($request->get("level") == "Administrator") $user->level = 1;
             else $user->level = 2;
-            $user->save();
-            $response = new \Phalcon\Http\Response();
-            $response->redirect("/control/users", true);
-            $response->send();
+            if ($user->save())
+            {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/users?msg=1", true);
+                $response->send();
+            } else {
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/control/edituser/".$user->id."?msg=2", true);
+                $response->send();
+            }
         }
     }
 
@@ -314,12 +401,22 @@ class ControlController extends ControllerBase
                 if ($newPassword == $request->get("confirmPassword"))
                 {
                     $user->password = base64_encode(hash('sha512', $request->get("newPassword")));
-                    $user->save();
-                    $response = new \Phalcon\Http\Response();
-                    $response->redirect("/control/", true);
-                    $response->send();
+                    if ($user->save())
+                    {
+                        $response = new \Phalcon\Http\Response();
+                        $response->redirect("/control/dashboard?msg=1", true);
+                        $response->send();
+                    } else {
+                        $response = new \Phalcon\Http\Response();
+                        $response->redirect("/control/dashboard?msg=2", true);
+                        $response->send();
+                    }
                 }
-            }
+            } else {
+            $response = new \Phalcon\Http\Response();
+            $response->redirect("/control/changepassword?msg=2", true);
+            $response->send();
+        }
         }
     }
 
