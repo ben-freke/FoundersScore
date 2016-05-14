@@ -61,8 +61,8 @@ class ControlController extends ControllerBase
     public function dashboardAction()
     {
         \Phalcon\Tag::setTitle('Dashboard');
-        $posts = Posts::find();
-        $users = Users::find();
+        $posts = posts::find();
+        $users = users::find();
         $this->view->setVar("postsNo", count($posts));
         $this->view->setVar("usersNo", count($users));
 
