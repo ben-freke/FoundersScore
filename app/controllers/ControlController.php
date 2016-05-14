@@ -135,7 +135,7 @@ class ControlController extends ControllerBase
 
     private function pushEndScore(Events $event)
     {
-        $post = new Posts();
+        $post = new posts();
         $post->userID = $this->session->get("userid");
         $post->title = $event->name;
         $post->body = $event->name . " concludes with the score at " . $event->score1 . " to " . $this->getTeamName(1) . " and " . $event->score2 ." to " . $this->getTeamName(2);
