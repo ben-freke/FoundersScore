@@ -5,7 +5,7 @@
 <p class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">Events will be shown here when they are completed and a score has been submitted</p>
 
 <br>
-<div class="row">
+<div class="row" style="overflow:scroll; overflow-x: hidden; height:500px;">
     <div class="col-md-6 col-md-offset-3">
         <table class=table style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
             <thead>

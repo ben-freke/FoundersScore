@@ -4,7 +4,7 @@
 <h1 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Timetable</b></h1>
 <br>
 
-<div class="row">
+<div class="row" style="overflow:scroll; overflow-x: hidden; height:500px;">
     <div class="col-md-6 col-md-offset-3">
         <table class=table style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
             <thead>
