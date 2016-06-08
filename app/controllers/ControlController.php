@@ -11,13 +11,7 @@ class ControlController extends ControllerBase
         {
             $username = $user->firstName . " ". $user->lastName;
             $this->view->setVar("fullName", $username);
-            if ($user->level == 1){
-                $this->view->setVar("admin", true);
-                $admin = true;
-
-            }
-
-            else $this->view->setVar("admin", false);
+            if ($user->level == 1) $this->view->setVar("admin", true);
         } else if ($_SERVER['REQUEST_URI'] != "/control") {
             $response = new \Phalcon\Http\Response();
             $response->redirect("/control", true);

@@ -19,7 +19,7 @@
 
             {% for event in events %}
                 <tr>
-                    <td><a href="/events/{{ event.id }}">{{ event.name }}</a></td>
+                    <td>{{ event.name }}</td>
                     <td>{{ event.friendlyTime }}</td>
                     <td>{{ event.location }}</td>
                     <td>{{ event.points }}</td>

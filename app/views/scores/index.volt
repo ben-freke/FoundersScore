@@ -24,7 +24,7 @@
                     {% continue %}
                 {% endif %}
                 <tr>
-                    <td><a href="/events/{{ event.id }}">{{ event.name }}</a></td>
+                    <td>{{ event.name }}</td>
                     <td>{{ event.score1 }}</td>
                     <td>{{ event.score2 }}</td>
                     <td>{{ event.points }}</td>

@@ -50,6 +50,10 @@
 <div class="col-md-12">
     <br>
     <div class="text-center" style=" color:white; font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;"><h3>infinitypx.com/founders</h3></div>
+    <div class="text-center">
+        <p>Proudly Sponsored By:</p>
+        <img src="/img/pringles.png">]
+    </div>
 </div>
 <meta http-equiv="refresh" content="10">
 

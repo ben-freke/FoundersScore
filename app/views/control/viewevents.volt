@@ -33,7 +33,7 @@
                     <td>{{ event.points }}</td>
                     <td>
                         <a href="/control/editevent/{{ event.id }}/"><button type="button" class="btn btn-primary">Edit</button></a>
-                        <a href="/control/deleteevent/{{ event.id }}/"><button type="button" class="btn btn-danger">Delete</button></a>
+                        {% if admin is defined %}<a href="/control/deleteevent/{{ event.id }}/"><button type="button" class="btn btn-danger">Delete</button></a>{% endif %}
 
                     </td>
                 </tr>

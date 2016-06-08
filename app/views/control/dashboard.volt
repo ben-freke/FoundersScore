@@ -7,8 +7,8 @@
             <div class="panel-heading"><b>Quick Actions</b></div>
             <div class="panel-body text-center">
                 <div style="padding-bottom: 10px"><a href="/bigscreen/"><button type="button" class="btn btn-danger">Big Screen</button></a></div>
-                <div style="padding-bottom: 10px"><a href="/control/addevent/"><button type="button" class="btn btn-info">Add Event</button></a></div>
-                <div style="padding-bottom: 10px"><a href="/control/adduser/"><button type="button" class="btn btn-info">Add User</button></a></div>
+                {% if admin is defined %}<div style="padding-bottom: 10px"><a href="/control/addevent/"><button type="button" class="btn btn-info">Add Event</button></a></div>{% endif %}
+                {% if admin is defined %}<div style="padding-bottom: 10px"><a href="/control/adduser/"><button type="button" class="btn btn-info">Add User</button></a></div>{% endif %}
                 <div style="padding-bottom: 10px"><a href="/control/addpost/"><button type="button" class="btn btn-info">Add Post</button></a></div>
 
             </div>
