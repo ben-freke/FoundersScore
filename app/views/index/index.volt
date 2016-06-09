@@ -39,7 +39,7 @@
 
 {% endfor %}
     <div class="col-md-12">
-        <div class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;"><a href="/blogs/"><u><b>View All</b></u></a></div>
+        <div class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;"><a href="#"><u><b>View All</b></u></a></div>
     </div>
 </div>
 

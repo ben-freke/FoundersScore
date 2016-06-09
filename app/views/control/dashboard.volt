@@ -18,30 +18,7 @@
         <div class="panel panel-success">
             <div class="panel-heading"><b>Statistics</b></div>
             <div class="panel-body">
-                <table class=table>
-                    <tbody>
-                        <tr>
-                            <td><b>Site Views</b></td>
-                            <td>11</td>
-                        </tr>
-                        <tr>
-                            <td><b>Site Bandwidth</b></td>
-                            <td>0.82 Mb/s</td>
-                        </tr>
-                        <tr>
-                            <td><b>Total Users</b></td>
-                            <td>{{ usersNo }}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Total Posts</b></td>
-                            <td>{{ postsNo }}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Site Status</b></td>
-                            <td style="color: green;"><b>Good</b></td>
-                        </tr>
-                    </tbody>
-                </table>
+               <i>Site Stats Coming Soon</i>
             </div>
         </div>
     </div>
