@@ -23,7 +23,7 @@
 <br>
     <h1 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Live Updates:</b></h1>
 <br>
-<div class="row" style="overflow:scroll; overflow-x: hidden; height:500px; ">
+<div class="row" style="overflow:scroll; overflow-x: hidden; max-height: 500px ">
 {% for update in updates %}
 
     <div class="col-md-6 col-md-offset-3">
