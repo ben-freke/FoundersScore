@@ -55,7 +55,7 @@
         <img src="/img/pringles.png">]
     </div>
 </div>
-<meta http-equiv="refresh" content="10">
+<meta http-equiv="refresh" content="90">
 
 </body>
 </html>
