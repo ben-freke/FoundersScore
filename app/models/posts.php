@@ -21,7 +21,7 @@ class posts extends Phalcon\Mvc\Model
     }
     public function afterFetch()
     {
-        $this->friendlyTime = date('G:i', strtotime($this->timestamp));
+        $this->friendlyTime = date('D G:i', strtotime($this->timestamp));
         $this->listTime = date('l G:i', strtotime($this->timestamp));
 
         $user = users::findFirst(array("conditions" => "id = " . $this->userID));
