@@ -15,6 +15,7 @@ class IndexController extends ControllerBase
         $score = $this->getScore();
         $this->view->setVar('score1', $score[1]);
         $this->view->setVar('score2', $score[2]);
+        $this->view->setVar('totalAvailablePoints', $score[3]);
 
         $updates = posts::find(array("order" => "timestamp DESC", "limit" => "30"));
         $data = array();

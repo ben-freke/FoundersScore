@@ -1,4 +1,9 @@
 {% include 'panelBase.volt' %}
+<style>
+    .progress-bar-team1 {background: rgba(174, 0, 0, 1);}
+    .progress-bar-team2 {background: rgba(0,127,224, 1);}
+
+</style>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Live Scoreboard:</b></h1>
@@ -6,6 +11,17 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h1 class="text-center" style="font-size: 100px; font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;"><span class="counter" style="color: #ae0000;">{{ score1 }}</span> <span style="font-size: 30px">v</span> <span class="counter" style="color: #007fe0;">{{ score2 }}</span></h1>
+                <hr>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-team1" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ (score1 / (totalAvailablePoints/2)) * 100 }}%;">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-team2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ (score2 / (totalAvailablePoints/2)) * 100 }}%;">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
