@@ -11,6 +11,7 @@ class ControlController extends ControllerBase
         {
             $username = $user->firstName . " ". $user->lastName;
             $this->view->setVar("fullName", $username);
+            $this->view->setVar("userID", $user->id);
             if ($user->level == 1) $this->view->setVar("admin", true);
         } else if ($_SERVER['REQUEST_URI'] != "/control") {
             $response = new \Phalcon\Http\Response();
@@ -254,6 +255,7 @@ class ControlController extends ControllerBase
         \Phalcon\Tag::setTitle('Posts');
         $this->view->setVar('team1', $this->getTeamName(1));
         $this->view->setVar('team2', $this->getTeamName(2));
+
         $blogs = posts::find(array("order" => "timestamp DESC"));
         $this->view->setVar('blogs', $blogs);
     }

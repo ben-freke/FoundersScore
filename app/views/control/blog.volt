@@ -30,8 +30,8 @@
                     <td>{{ blog.body }}</td>
                     <td>{{ blog.listTime }}</td>
                     <td>
-                        {% if admin is defined %}<a href="/control/editpost/{{ blog.id }}/"><button type="button" class="btn btn-primary">Edit</button></a>{% endif %}
-                        {% if admin is defined %}<a href="/control/deletepost/{{ blog.id }}/"><button type="button" class="btn btn-danger">Delete</button></a>{% endif %}
+                        {% if admin is defined or blog.userID == userID %}<a href="/control/editpost/{{ blog.id }}/"><button type="button" class="btn btn-primary">Edit</button></a>{% endif %}
+                        {% if admin is defined or blog.userID == userID %}<a href="/control/deletepost/{{ blog.id }}/"><button type="button" class="btn btn-danger">Delete</button></a>{% endif %}
 
                     </td>
                 </tr>

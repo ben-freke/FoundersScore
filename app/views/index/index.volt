@@ -27,7 +27,13 @@
 {% for update in updates %}
 
     <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-default">
+        {% if update.userID == 10 %}
+            <div class="panel panel-danger">
+        {% elseif update.userID == 11 %}
+            <div class="panel panel-info">
+        {% else %}
+            <div class="panel panel-default">
+        {% endif %}
             <div class="panel-heading"style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>{{ update.title }}</b></div>
             <div class="panel-body">
                 <p style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-align: justify; text-justify: inter-word;">
