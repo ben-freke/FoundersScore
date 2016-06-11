@@ -23,7 +23,9 @@
                 {% if event.score1 == null %}
                     {% continue %}
                 {% endif %}
-                <tr>
+                {% if event.score1 > event.score2 %}<tr style="color: #ae0000;">
+                {% elseif event.score2 > event.score1 %}<tr style="color: #007fe0;">
+                {% else %}<tr>{% endif %}
                     <td>{{ event.name }}</td>
                     <td>{{ event.score1 }}</td>
                     <td>{{ event.score2 }}</td>
