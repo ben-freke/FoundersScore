@@ -135,6 +135,9 @@ class ControlController extends ControllerBase
         $post->title = $event->name;
         $post->body = $event->name . " concludes with the score at " . $event->score1 . " to " . $this->getTeamName(1) . " and " . $event->score2 ." to " . $this->getTeamName(2);
         $post->save();
+        sleep(1);
+        $this->checkWinner();
+
     }
 
     public function deleteeventAction($id)

@@ -48,4 +48,32 @@ class ControllerBase extends \Phalcon\Mvc\Controller
         return $team;
     }
 
+    protected function checkWinner()
+    {
+        $won = posts::findFirst(array(
+            "conditions" => "title = :val:",
+            "bind" => array("val" => "Winners of Founders 2016")
+        ));
+        if ($won) return;
+        $score = $this->getScore();
+        $threshold = $score[3] / 2;
+
+        if ($score[1] > $threshold){
+            $this->putPost('Winners of Founders 2016', $this->getTeamName(1) . ' have won Founders 2016 after exceeding the 41 point threshold.');
+        }
+        else if ($score[2] > $threshold)
+        {
+            $this->putPost('Winners of Founders 2016', $this->getTeamName(2) . ' have won Founders 2016 after exceeding the 41 point threshold.');
+        }
+    }
+
+    protected function putPost($title, $content)
+    {
+        $post = new posts();
+        $post->title = $title;
+        $post->body = $content;
+        $post->userID = $this->session->get("userid");
+        $post->save();
+    }
+
 }

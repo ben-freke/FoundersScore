@@ -47,6 +47,8 @@
             <div class="panel panel-danger">
         {% elseif update.userID == 11 %}
             <div class="panel panel-info">
+        {% elseif update.title == "Winners of Founders 2016" %}
+            <h3 class="text-center"><div class="panel panel-danger">
         {% else %}
             <div class="panel panel-default">
         {% endif %}
@@ -56,7 +58,7 @@
                     <b>{{ update.friendlyTime }}:</b> {{ update.body }}
                 </p>
             </div>
-        </div>
+        </div>{% if update.title == "Winners of Founders 2016" %}</h3>{% endif %}
     </div>
 
 {% endfor %}
