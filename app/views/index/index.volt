@@ -48,7 +48,7 @@
         {% elseif update.userID == 11 %}
             <div class="panel panel-info">
         {% elseif update.title == "Winners of Founders 2016" %}
-            <h3 class="text-center"><div class="panel panel-danger">
+            <h3 class="text-center"><div class="panel panel-info">
         {% else %}
             <div class="panel panel-default">
         {% endif %}
