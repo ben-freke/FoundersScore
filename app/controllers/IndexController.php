@@ -12,10 +12,7 @@ class IndexController extends ControllerBase
         $team2 = teams::findFirst(array(
             "conditions" => "id = 2"
         ));
-        $score = $this->getScore();
-        $this->view->setVar('score1', $score[1]);
-        $this->view->setVar('score2', $score[2]);
-        $this->view->setVar('totalAvailablePoints', $score[3]);
+
 
         $updates = posts::find(array("order" => "timestamp DESC", "limit" => "30"));
         $data = array();
@@ -24,11 +21,11 @@ class IndexController extends ControllerBase
             $d = array();
             $d['title'] = $update->title;
             $d['body'] = $update->body;
-            $d['time'] = $update->timestamp;
+            $d['time'] = $today = date("D H:m", $update->timestamp);
             array_push($data, $d);
         }
 
-        $this->view->setVar('updates', $updates);
+        $this->view->setVar('updates', $data);
 
     }
 

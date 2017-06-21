@@ -1,39 +1,42 @@
-{% include 'panelBase.volt' %}
-<a href="/"><button type="button" class="btn btn-success" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
-        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</button></a>
-<h1 class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif; text-transform: uppercase;"><b>Scores:</b></h1>
-<p class="text-center" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">Events will be shown here when they are completed and a score has been submitted</p>
+{% extends 'base.volt' %}
 
-<br>
-<div class="row" style="overflow:scroll; overflow-x: hidden; height:500px;">
-    <div class="col-md-6 col-md-offset-3">
-        <table class=table style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
-            <thead>
-            <tr>
-                <th>Event</th>
-                <th>{{ team1 }}</th>
-                <th>{{ team2 }}</th>
-                <th>Points</th>
+{% block body %}
 
-            </tr>
-            </thead>
-            <tbody>
-
-            {% for event in events %}
-                {% if event.score1 == null %}
-                    {% continue %}
-                {% endif %}
-                {% if event.score1 > event.score2 %}<tr style="color: #ae0000;">
-                {% elseif event.score2 > event.score1 %}<tr style="color: #007fe0;">
-                {% else %}<tr>{% endif %}
+    <section id="one" class="wrapper style1">
+        <header class="major">
+            <h2>Event Scores</h2>
+            <br>
+            <p>Scores will be displayed here as they arrive. Scores will be coloured depending on the winning team. For a list of events, click <a href="/timetable">here</a>.</p>
+        </header>
+        <div class="container">
+            <table class=table style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
+                <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>{{ team1 }}</th>
+                    <th>{{ team2 }}</th>
+                    <th>Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in events %}
+                    {% if event.score1 == null %}
+                        {% continue %}
+                    {% endif %}
+                    {% if event.score1 > event.score2 %}<tr style="color: #ae0000;">
+                    {% elseif event.score2 > event.score1 %}<tr style="color: #007fe0;">
+                    {% else %}<tr>{% endif %}
                     <td>{{ event.name }}</td>
                     <td>{{ event.score1 }}</td>
                     <td>{{ event.score2 }}</td>
                     <td>{{ event.points }}</td>
-                </tr>
-            {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-            </tbody>
-        </table>
-    </div>
-</div>
+
+
+{% endblock %}

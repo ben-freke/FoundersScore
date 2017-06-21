@@ -2,6 +2,22 @@
 
 class ControllerBase extends \Phalcon\Mvc\Controller
 {
+
+    protected function initialize()
+    {
+        $maxScore = 100;
+
+        $score = $this->getScore();
+        $this->view->setVar('score1', $score[1]);
+        $this->view->setVar('score2', $score[2]);
+        $this->view->setVar('totalAvailablePoints', $score[3]);
+        $percentage1 = (($score[1] / $score[3]) * 100);
+        $this->view->setVar('percentage1', $percentage1);
+        $percentage2 = ($score[2] / $score[3]) * 100;
+        $this->view->setVar('percentage2', $percentage2);
+    }
+
+
     protected function getTeamName($id)
     {
         $team = teams::findFirst(array(
