@@ -3,7 +3,7 @@
 class ControllerBase extends \Phalcon\Mvc\Controller
 {
 
-    protected function initialize()
+    public function initialize()
     {
         $maxScore = 100;
 
