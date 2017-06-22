@@ -5,7 +5,7 @@
     <meta property="og:type"              content="website" />
     <meta property="og:title"             content="Lancaster Founders 2017" />
     <meta property="og:description"       content="The official scoreboard and timetable for the Lancaster Founders 2017 series." />
-    <meta property="og:image"             content="https://www.lancasterfounders.com/images/banner.jpg" />
+    <meta property="og:image"             content="/images/preview_photo.jpg" />
     {% endblock %}
 
 {% block body %}
