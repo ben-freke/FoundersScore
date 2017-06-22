@@ -6,6 +6,7 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
+
         $team1 = teams::findFirst(array(
             "conditions" => "id = 1"
         ));
@@ -21,7 +22,7 @@ class IndexController extends ControllerBase
             $d = array();
             $d['title'] = $update->title;
             $d['body'] = $update->body;
-            $d['time'] = $today = date("D H:m", $update->timestamp);
+            $d['time'] = $update->friendlyTime;
             array_push($data, $d);
         }
 

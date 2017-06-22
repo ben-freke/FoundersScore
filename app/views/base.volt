@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/style-xlarge.css" />
     </noscript>
+    <link rel="shortcut icon" href="/img/icon.ico">
 
 </head>
 <body id="top">
@@ -37,13 +38,13 @@
 <section id="banner">
     <div class="inner">
         <h2>This is Founders.</h2>
-        <p>Two colleges. Thirty two Sports. One winner.</p>
+        <p>Two Colleges. Thirty Two Sports. One winner.</p>
 
         <div id="progressbar" class="8u align-center" style="width: 80%; margin: 0 auto;;">
             <br>
             <div style="height:52px; width:100%; position: relative"><img src="/images/points_divider.png"></div>
-            <div style="height:45px; width:{{ percentage1 }}%; background-color:royalblue; float:left; display: inline-block; "><p style="color:white; line-height: 50px">{{ score1 }}</p></div>
-            <div style="height:45px; width:{{ percentage2 }}%; background-color:darkred; float: right; display: inline-block; "><p style="color:white; line-height: 50px">{{ score2 }}</p></div>
+            <div style="height:45px; width:{{ percentage1 }}%; background-color:darkred; float:right; display: inline-block; "><p style="color:white; line-height: 50px">{{ score1 }}</p></div>
+            <div style="height:45px; width:{{ percentage2 }}%; background-color:royalblue; float: left; display: inline-block; "><p style="color:white; line-height: 50px">{{ score2 }}</p></div>
             <div style="height:45px; width:100%; background-color:lightgrey;"></div>
 
 

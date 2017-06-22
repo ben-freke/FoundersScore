@@ -35,21 +35,21 @@
             <div class="row">
                 <div class="6u">
                     <section class="special">
-                        <a href="#" class="image fit"><img src="images/photo.jpg" alt="" /></a>
+                        <a href="#" class="image fit"><img src="images/football.jpg" alt="" /></a>
                         <h3>Event Scores</h3>
                         <p>Find out all the events still to come: their times and locations.</p>
                         <ul class="actions">
-                            <li><a href="#" class="button alt">Events</a></li>
+                            <li><a href="/timetable" class="button alt">Events</a></li>
                         </ul>
                     </section>
                 </div>
                 <div class="6u">
                     <section class="special">
-                        <a href="#" class="image fit"><img src="images/darts.jpg" alt="" /></a>
+                        <a href="#" class="image fit"><img src="images/football2.jpg" alt="" /></a>
                         <h3>Timetable</h3>
                         <p>View the results for every event that's taken place so far.</p>
                         <ul class="actions">
-                            <li><a href="#" class="button alt">Scores</a></li>
+                            <li><a href="/scores" class="button alt">Scores</a></li>
                         </ul>
                     </section>
                 </div>

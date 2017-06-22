@@ -75,11 +75,11 @@ class ControllerBase extends \Phalcon\Mvc\Controller
         $threshold = $score[3] / 2;
 
         if ($score[1] > $threshold){
-            $this->putPost('Winners of Founders 2016', $this->getTeamName(1) . ' have won Founders 2016 after exceeding the 41 point threshold.');
+            $this->putPost('Winners of Founders ' . date("Y"), $this->getTeamName(1) . ' have won Founders ' . date("Y") . ' after exceeding the 41 point threshold.');
         }
         else if ($score[2] > $threshold)
         {
-            $this->putPost('Winners of Founders 2016', $this->getTeamName(2) . ' have won Founders 2016 after exceeding the 41 point threshold.');
+            $this->putPost('Winners of Founders ' . date("Y"), $this->getTeamName(2) . ' have won Founders ' . date("Y") . ' after exceeding the 41 point threshold.');
         }
     }
 
