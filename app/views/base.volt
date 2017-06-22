@@ -17,6 +17,8 @@
     </noscript>
     <link rel="shortcut icon" href="/img/icon.ico">
 
+    {% block metadata %} {% endblock %}
+
 </head>
 <body id="top">
 
