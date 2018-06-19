@@ -34,5 +34,40 @@
             });
         });
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69431902-12"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-69431902-12');
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#efefef",
+                        "text": "#404040"
+                    },
+                    "button": {
+                        "background": "#8ec760",
+                        "text": "#ffffff"
+                    }
+                },
+                "theme": "edgeless",
+                "position": "bottom-left",
+                "content": {
+                    "href": "https://www.lancasterfounders.com/privacy"
+                }
+            })});
+    </script>
+
 </head>
 <body>

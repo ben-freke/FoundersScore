@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Founders 2017</title>
+    <title>Founders 2018</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -17,13 +17,47 @@
     </noscript>
     <link rel="shortcut icon" href="/img/icon.ico">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69431902-12"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-69431902-12');
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#efefef",
+                        "text": "#404040"
+                    },
+                    "button": {
+                        "background": "#8ec760",
+                        "text": "#ffffff"
+                    }
+                },
+                "theme": "edgeless",
+                "position": "bottom-left",
+                "content": {
+                    "href": "https://www.lancasterfounders.com/privacy"
+                }
+            })});
+    </script>
+
     {% block metadata %} {% endblock %}
 
 </head>
 <body id="top">
 
 <header id="header" class="skel-layers-fixed">
-    <h1><a href="/">Founders 2017 </a></h1>
+    <h1><a href="/">Founders 2018 </a></h1>
 <nav id="nav">
     <ul>
         <li><a href="/">Home</a></li>
@@ -77,6 +111,7 @@
                             <li><a href="/timetable">Event Timetable</a></li>
                             <li><a href="/scores">Event Scores</a></li>
                             <li><a href="/about">About</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
