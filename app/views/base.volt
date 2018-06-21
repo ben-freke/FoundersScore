@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Founders 2018</title>
+    <title>Undergrounders 2018</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -57,7 +57,7 @@
 <body id="top">
 
 <header id="header" class="skel-layers-fixed">
-    <h1><a href="/">Founders 2018 </a></h1>
+    <h1><a href="/">Undergrounders 2018 </a></h1>
 <nav id="nav">
     <ul>
         <li><a href="/">Home</a></li>
@@ -73,7 +73,7 @@
 <!-- Banner -->
 <section id="banner">
     <div class="inner">
-        <h2>This is Founders.</h2>
+        <h2>This is Undergrounders.</h2>
         <p>Two Colleges. Thirty Two Sports. One winner.</p>
 
         <div id="progressbar" class="8u align-center" style="width: 80%; margin: 0 auto;;">
@@ -117,13 +117,13 @@
                 </div>
             </div>
             <div class="6u">
-                <h2>Founders</h2>
-                    <p>The founders website is developed by Ben Freke for Bowland and Lonsdale Colleges.</p>
+                <h2>Undergrounders</h2>
+                    <p>The Founders / Undergrounders website is developed by Ben Freke for Bowland and Lonsdale Colleges.</p>
                     <p class="text-center"><a href="https://www.benfreke.org">www.benfreke.org</a></p>
             </div>
         </div>
         <ul class="copyright">
-            <li>&copy; Ben Freke 2017. All rights reserved.</li>
+            <li>&copy; Ben Freke 2018. All rights reserved.</li>
         </ul>
     </div>
 </footer>
