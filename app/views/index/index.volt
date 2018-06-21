@@ -13,7 +13,7 @@
     <!-- One -->
     <section id="one" class="wrapper style1">
         <header class="major">
-            <h2>FoundersLive</h2>
+            <h2>Undergrounders-Live</h2>
             <br>
             <p>Live updates from the pitch:</p>
         </header>
