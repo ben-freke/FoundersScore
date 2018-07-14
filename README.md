@@ -1,4 +1,4 @@
-# Project Title
+# LiveScore
 
 LiveScore is a PHP application written in Phalcon which provides a live scoring system to a sporting competition, designed for Intervarsity Competitions. Lancaster is a collegiate university, and the majority of the colleges have competitions with multiple sports. Historically, no one has known the scores for each sport and subsequently the overall score.
 
