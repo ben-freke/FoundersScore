@@ -3,9 +3,9 @@
 {% block metadata %}
     <meta property="og:url"               content="https://www.lancasterfounders.com/" />
     <meta property="og:type"              content="website" />
-    <meta property="og:title"             content="Lancaster Founders 2017" />
-    <meta property="og:description"       content="The official scoreboard and timetable for the Lancaster Founders 2017 series." />
-    <meta property="og:image"             content="/images/preview_photo.jpg" />
+    <meta property="og:title"             content="Lancaster Founders 2019" />
+    <meta property="og:description"       content="The official scoreboard and timetable for the Lancaster Founders 2019 series." />
+    <meta property="og:image"             content="/static/img/preview_photo.jpg" />
     {% endblock %}
 
 {% block body %}
@@ -43,21 +43,21 @@
             <div class="row">
                 <div class="6u">
                     <section class="special">
-                        <a href="#" class="image fit"><img src="images/football.jpg" alt="" /></a>
+                        <a href="#" class="image fit"><img src="/static/img/football.jpg" alt="" /></a>
                         <h3>Event Scores</h3>
                         <p>Find out all the events still to come: their times and locations.</p>
                         <ul class="actions">
-                            <li><a href="/timetable" class="button alt">Events</a></li>
+                            <li><a href="/timetable#one" class="button alt">Events</a></li>
                         </ul>
                     </section>
                 </div>
                 <div class="6u">
                     <section class="special">
-                        <a href="#" class="image fit"><img src="images/football2.jpg" alt="" /></a>
+                        <a href="#" class="image fit"><img src="/static/img/football2.jpg" alt="" /></a>
                         <h3>Timetable</h3>
                         <p>View the results for every event that's taken place so far.</p>
                         <ul class="actions">
-                            <li><a href="/scores" class="button alt">Scores</a></li>
+                            <li><a href="/scores#one" class="button alt">Scores</a></li>
                         </ul>
                     </section>
                 </div>

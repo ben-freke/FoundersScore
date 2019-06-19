@@ -7,7 +7,7 @@
                 rgba(0, 0, 0, 0.5),
                 rgba(0, 0, 0, 0.5)
         ),
-            url(/img/bks/{{ imgNo }}.jpg) no-repeat center center fixed;
+            url(/static/img/banner.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -49,11 +49,6 @@
 </div>
 <div class="col-md-12">
     <br>
-    <div class="text-center" style=" color:white; font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;"><h3>infinitypx.com/founders</h3></div>
-    <div class="text-center">
-        <p>Proudly Sponsored By:</p>
-        <img src="/img/pringles.png">]
-    </div>
 </div>
 <meta http-equiv="refresh" content="90">
 

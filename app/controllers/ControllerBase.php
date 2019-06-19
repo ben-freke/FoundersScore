@@ -15,6 +15,7 @@ class ControllerBase extends \Phalcon\Mvc\Controller
         $this->view->setVar('percentage1', $percentage1);
         $percentage2 = ($score[2] / $score[3]) * 100;
         $this->view->setVar('percentage2', $percentage2);
+        $this->view->setVar('staticcontentbaseurl', $this->configvars->staticcontentbaseurl);
     }
 
 

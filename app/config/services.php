@@ -44,6 +44,10 @@ $di->setShared('session', function () {
     return $session;
 });
 
+$di->set('configvars', function() use ($config) {
+    return $config->variables;
+}, true);
+
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
