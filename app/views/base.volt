@@ -14,9 +14,11 @@
     <script src="/static/js/skel.min.js"></script>
     <script src="/static/js/skel-layers.min.js"></script>
     <script src="/static/js/init.js"></script>
-    <link rel="stylesheet" href="/static/css/skel.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <link rel="stylesheet" href="/static/css/style-xlarge.css" />
+    <noscript>
+        <link rel="stylesheet" href="/static/css/skel.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/style-xlarge.css" />
+    </noscript>
     <link rel="shortcut icon" href="/static/img/icon.ico">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142417468-1"></script>
