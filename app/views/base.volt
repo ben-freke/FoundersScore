@@ -5,19 +5,20 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     <script src="/static/js/jquery.min.js"></script>
+
+    <!--[if lte IE 8]>
+        <script src="/static/js/html5shiv.js"></script>
+    <![endif]-->
+
     <script src="/static/js/skel.min.js"></script>
     <script src="/static/js/skel-layers.min.js"></script>
     <script src="/static/js/init.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="/static/css/skel.css" />
-        <link rel="stylesheet" href="/static/css/style.css" />
-        <link rel="stylesheet" href="/static/css/style-xlarge.css" />
-    </noscript>
+    <link rel="stylesheet" href="/static/css/skel.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style-xlarge.css" />
     <link rel="shortcut icon" href="/static/img/icon.ico">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142417468-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -27,10 +28,10 @@
         gtag('config', 'UA-142417468-1');
     </script>
 
-
-
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
     <script>
         window.addEventListener("load", function(){
             window.cookieconsent.initialise({
@@ -69,8 +70,6 @@
 </nav>
 </header>
 
-
-
 <!-- Banner -->
 <section id="banner">
     <div class="inner">
@@ -97,7 +96,6 @@
 
 {% block body %}
 {% endblock %}
-
 
 <!-- Footer -->
 <footer id="footer">

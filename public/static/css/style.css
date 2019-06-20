@@ -977,7 +977,7 @@
 
 	#banner {
 		background-color: #666666;
-		background-image: url("/img/banner.jpg");
+		background-image: url("https://d15l3oeu1i0tuo.cloudfront.net/img/banner.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;

@@ -13,9 +13,9 @@
     <!-- One -->
     <section id="one" class="wrapper style1">
         <header class="major">
-            <h2>Undergrounders-Live</h2>
+            <h2>Founders-Live</h2>
             <br>
-            <p>Live updates from the pitch:</p>
+            <p>Live updates from the action:</p>
         </header>
         <div class="container">
 

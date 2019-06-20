@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,6 +33,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
 {%  if msg is defined %}
     {% if msg == 1 %}
         <div class="row" id="success" style="font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;">
